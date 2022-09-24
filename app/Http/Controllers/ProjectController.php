@@ -20,6 +20,7 @@ class ProjectController extends Controller
     }
 
     public function store(Request $r){
+   
         $members =implode(",",$r->members);
         
         $project = new Project();
@@ -28,7 +29,13 @@ class ProjectController extends Controller
         $project->title = $r->title; 
         $project->description = $r->description; 
         $project->users = $members; 
-        $project->save(); 
+        if($project->save()){
+            // receive the id
+            // dd($project->id);
+            // insert into group_members table
+            // 1, 2, 1646
+            // 1, 2, 1643
+        }
 
         return redirect()->back()->with('success','Project created successfully');
     }
