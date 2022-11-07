@@ -1,7 +1,7 @@
 @extends('website.layouts.default')
 @section('content')
 <div class="container">
-        <h3>Project Form</h3>
+        <h3>Create Project</h3>
         <form method="post" action="{{ url('store-project') }}">
         {{ csrf_field() }}
         @if(Session::has('success'))
@@ -11,14 +11,14 @@
 		@endif
             <div class="form-group">
                 <label for="">Course <Title></Title></label>
-                <select name="course_title" class="form-control" id="">
+                <select name="course_id" class="form-control" id="">
                     <option hidden>Select Course</option>
                     @foreach ($courses as $c)
                         <option value="{{ $c->id }}">{{ $c->title }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="">Course Code</label>
                 <select name="course_code" class="form-control" id="">
                     <option hidden>Select Course</option>
@@ -26,7 +26,7 @@
                         <option value="{{ $c->id }}">{{ $c->code }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> -->
             <div class="form-group  my-3">
                 <label class="mb-2" for="">Project Title</label>
                 <input type="text" name="title" class="form-control" id="">
@@ -44,7 +44,7 @@
         
             <div class="clone row my-3" style="margin-right:-20px;">
                 <div class="col-sm-6 m-0 mb-2 d-flex">
-                    <select name="members[]" class="form-control">
+                    <select name="members[]" class="form-control" required>
                         <option hidden value="">Select Student</option>
                         @foreach($users as $user)
                         <option value="{{$user->studentid}}">{{$user->studentid}}</option>

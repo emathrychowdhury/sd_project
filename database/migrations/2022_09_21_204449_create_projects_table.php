@@ -19,10 +19,10 @@ class CreateProjectsTable extends Migration
             $table->longText('description');
             $table->string('users');
             $table->boolean('is_approved')->default(false);
-            $table->unsignedBigInteger('course_title');
-            $table->foreign('course_title')->references('id')->on('courses');
-            $table->unsignedBigInteger('course_code');
-            $table->foreign('course_code')->references('id')->on('courses');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses');
+            // $table->unsignedBigInteger('course_code');
+            // $table->foreign('course_code')->references('id')->on('courses');
             $table->timestamps();
         });
     }

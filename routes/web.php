@@ -69,4 +69,8 @@ Route::group(['middleware' => 'checkIfStudent'], function () {
     Route::get('projects',[ProjectController::class,'list']);
     Route::get('create-project',[ProjectController::class,'create']);
     Route::post('store-project',[ProjectController::class, 'store']);  
+    Route::get('edit-project/{id}', [ProjectController::class, 'edit']);
+
+    Route::post('update-project/{id}', [ProjectController::class, 'update']);
+    Route::get('delete-project/{id}', [ProjectController::class, 'delete']);
 });
