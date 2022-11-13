@@ -30,7 +30,7 @@
             @if ($projects)
             @foreach ($projects as $p)
             <tr>
-                <td>{{ $p->id }}</td>
+                <td>{{ $loop->index+1 }}</td>
                 <td>{{ $p->courses->title }}</td>
                 <td>{{ $p->title }}</td>
                 <td>{{ $p->description }}</td>

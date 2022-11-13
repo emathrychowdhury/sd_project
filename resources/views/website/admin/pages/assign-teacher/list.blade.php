@@ -27,7 +27,7 @@
                 @if ($assignTeachers)
                     @foreach ($assignTeachers as $a)
                         <tr>
-                            <td>{{ $a->id }}</td>
+                            <td>{{ $loop->index+1 }}</td>
                             <td>{{ $a->sessions->name }}</td>
                             <td>{{ $a->courses->title }}</td>
                             <td>{{ $a->section }}</td>

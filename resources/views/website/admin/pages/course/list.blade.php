@@ -26,7 +26,7 @@
                 @if ($courses)
                     @foreach ($courses as $c)
                         <tr>
-                            <td>{{ $c->id }}</td>
+                            <td>{{ $loop->index+1 }}</td>
                             <td>{{ $c->title }}</td>
                             <td>{{ $c->code }}</td>
                             <td>{{ ucfirst($c->type) }}</td>
