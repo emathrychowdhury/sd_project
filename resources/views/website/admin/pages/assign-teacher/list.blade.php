@@ -7,6 +7,11 @@
                 <strong>{{ Session::get('msg') }}</strong>
             </div>
         @endif
+        @if (Session::has('fail'))
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ Session::get('fail') }}</strong>
+            </div>
+        @endif
         <a href="{{ URL::to('create-assign-teacher') }}" class="btn btn-info text-decoration-none float-right my-2">Assign Teacher</a>
 
         <table class="table table-secondary table-striped">

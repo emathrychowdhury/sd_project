@@ -17,15 +17,15 @@
             <div class="col-md-6 mt-5">
                 <div class="signup-form">
                     @if (Session::has('success'))
-                        <div class="alert alert-success">
-                            {{ Session::get('success') }}
-                        </div>
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
                     @endif
 
                     @if (Session::has('error_msg'))
-                        <div class="alert alert-danger">
-                            {{ Session::get('error_msg') }}
-                        </div>
+                    <div class="alert alert-danger">
+                        {{ Session::get('error_msg') }}
+                    </div>
                     @endif
                     <form action="{{ URL::to('/login-store') }}" method="post" class="mt-5">
                         {{ csrf_field() }}
@@ -37,10 +37,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="useremail" placeholder="User Email" required="required">
+                            <input type="email" class="form-control" name="useremail" placeholder="User Email"
+                                required="required">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                            <input type="password" class="form-control" name="password" placeholder="Password"
+                                required="required">
                         </div>
 
 
@@ -48,7 +50,7 @@
                             <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </div>

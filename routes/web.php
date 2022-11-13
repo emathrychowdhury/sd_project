@@ -66,11 +66,17 @@ Route::group(['middleware' => 'checkIfAdmin'], function () {
 
 Route::group(['middleware' => 'checkIfStudent'], function () {
       // project form
-    Route::get('projects',[ProjectController::class,'list']);
-    Route::get('create-project',[ProjectController::class,'create']);
-    Route::post('store-project',[ProjectController::class, 'store']);  
+    Route::get('projects', [ProjectController::class,'list']);
+    Route::get('create-project', [ProjectController::class,'create']);
+    Route::post('store-project', [ProjectController::class, 'store']);
     Route::get('edit-project/{id}', [ProjectController::class, 'edit']);
 
     Route::post('update-project/{id}', [ProjectController::class, 'update']);
     Route::get('delete-project/{id}', [ProjectController::class, 'delete']);
+});
+
+Route::group(['middleware' => 'checkIfTeacher'], function () {
+    Route::get('projects-list/{status}', [ProjectIdeaController::class, 'projects']);
+    Route::get('approve-project/{id}', [ProjectIdeaController::class, 'approve']);
+    Route::get('reject-project/{id}', [ProjectIdeaController::class, 'reject']);
 });

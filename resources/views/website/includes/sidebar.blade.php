@@ -21,78 +21,79 @@
     <!-- Divider -->
     {{-- sidebar for admin --}}
     @if (Session::get('userrole') == 'admin')
-        <hr class="sidebar-divider">
+    <hr class="sidebar-divider">
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="true"
-                aria-controls="collapseTwo1">Manage session</a>
-            <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ URL::to('sessions') }}">List</a>
-                    <a class="collapse-item" href="{{ URL::to('create-session') }}">Add</a>
-                </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="true"
+            aria-controls="collapseTwo1">Manage session</a>
+        <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ URL::to('sessions') }}">List</a>
+                <a class="collapse-item" href="{{ URL::to('create-session') }}">Add</a>
             </div>
-        </li>
+        </div>
+    </li>
 
-        <!-- Course  -->
-        <hr class="sidebar-divider">
+    <!-- Course  -->
+    <hr class="sidebar-divider">
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="true"
-                aria-controls="collapseTwo2">Manage Course</a>
-            <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ URL::to('courses') }}">List</a>
-                    <a class="collapse-item" href="{{ URL::to('create-course') }}">Add</a>
-                </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="true"
+            aria-controls="collapseTwo2">Manage Course</a>
+        <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ URL::to('courses') }}">List</a>
+                <a class="collapse-item" href="{{ URL::to('create-course') }}">Add</a>
             </div>
-        </li>
+        </div>
+    </li>
 
-        <!-- Assign Teacher -->
-        <hr class="sidebar-divider">
+    <!-- Assign Teacher -->
+    <hr class="sidebar-divider">
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3" aria-expanded="true"
-                aria-controls="collapseTwo3">Assign Course Teacher</a>
-            <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ URL::to('assign-teacher') }}">List</a>
-                    <a class="collapse-item" href="{{ URL::to('create-assign-teacher') }}">Add</a>
-                </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3" aria-expanded="true"
+            aria-controls="collapseTwo3">Assign Course Teacher</a>
+        <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ URL::to('assign-teacher') }}">List</a>
+                <a class="collapse-item" href="{{ URL::to('create-assign-teacher') }}">Add</a>
             </div>
-        </li>
+        </div>
+    </li>
     @endif
 
     {{-- sidebar for teacher --}}
     @if (Session::get('userrole') == 'teacher')
-        <hr class="sidebar-divider">
+    <hr class="sidebar-divider">
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                aria-controls="collapseTwo">See students</a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ URL::to('sessions') }}">List</a>
-                    <a class="collapse-item" href="{{ URL::to('create-session') }}">Add</a>
-                </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+            aria-controls="collapseTwo">Project List</a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ URL::to('projects-list/all') }}">All Projects</a>
+                <a class="collapse-item" href="{{ URL::to('projects-list/pending') }}">Pending Projects</a>
+                <a class="collapse-item" href="{{ URL::to('projects-list/approved') }}">Approved Projects</a>
             </div>
-        </li>
+        </div>
+    </li>
     @endif
 
     {{-- sidebar for student --}}
     @if (Session::get('userrole') == 'student')
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                aria-controls="collapseTwo">Project Idea Form</a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ URL::to('projects') }}">List</a>
-                    <a class="collapse-item" href="{{ URL::to('create-project') }}">Add</a>
-                </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+            aria-controls="collapseTwo">Project Idea Form</a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ URL::to('projects') }}">List</a>
+                <a class="collapse-item" href="{{ URL::to('create-project') }}">Add</a>
             </div>
-        </li>
-        
+        </div>
+    </li>
+
     @endif
 
     <!-- Divider -->

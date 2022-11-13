@@ -60,6 +60,7 @@ class AuthController extends Controller
             return redirect()->back()->with('error_msg', 'invalid email or password');
         } else {
             Session::put('username', $login->name);
+            Session::put('useremail', $login->email);
             Session::put('userrole', $login->role);
             // dd(Session::all());
             return redirect()->to('/');

@@ -22,14 +22,14 @@ class ProjectController extends Controller
     }
 
     public function store(Request $r){
-   
+
         $members =implode(",",$r->members);
-        
-        $project = new Project(); 
-        $project->course_id = $r->course_id; 
-        $project->title = $r->title; 
-        $project->description = $r->description; 
-        $project->users = $members; 
+
+        $project = new Project();
+        $project->course_id = $r->course_id;
+        $project->title = $r->title;
+        $project->description = $r->description;
+        $project->users = $members;
         $project->save();
         // if($project->save()){
             // receive the id
@@ -43,7 +43,7 @@ class ProjectController extends Controller
         // return redirect()->back()->with('success','Project created successfully');
     }
     public function edit($id){
-        
+
         // return view('course.edit');
         $users = User::where('role','student')->get();
         $courses = Course::all();
@@ -57,10 +57,10 @@ class ProjectController extends Controller
    }
 
    public function update(Request $r,$id){
-    $members =implode(",",$r->members); 
-    $course_id = $r->course_id; 
-    $title = $r->title; 
-    $description = $r->description; 
+    $members =implode(",",$r->members);
+    $course_id = $r->course_id;
+    $title = $r->title;
+    $description = $r->description;
     // $users = $members;
 
         $affected = DB::table('projects')
@@ -69,11 +69,11 @@ class ProjectController extends Controller
                 [
                     'title' => $title,
                     'course_id' => $course_id,
-                    'description' => $description, 
-                    'users' => $members, 
+                    'description' => $description,
+                    'users' => $members,
                 ]
             );
-        
+
         return Redirect::to('projects')
             ->with('msg', 'Project updated successfully');
    }
@@ -84,5 +84,4 @@ class ProjectController extends Controller
             ->delete();
         return redirect()->back()->with('fail','Project Deleted Successfully');
    }
-    
 }
